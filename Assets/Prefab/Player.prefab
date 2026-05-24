@@ -111,7 +111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerState
   playerSpriteRenderer: {fileID: 3923001904118752115}
   ghostSprite: {fileID: 4448715427215634006, guid: bfb0e83c2c1af41feb6f50a1005f1e96, type: 3}
-  possessedSprite: {fileID: 8957324059118975939, guid: 3863dbc8948154af89da34a91b873e04, type: 3}
 --- !u!61 &1239932087852093572
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -241,7 +240,19 @@ MonoBehaviour:
     m_ActionId: ea0a4652-bf1c-46a3-bce6-b43bddc2715c
     m_ActionName: 'Player/Interaction[/Keyboard/e]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PossessionMinigame, Assembly-CSharp
+        m_MethodName: OnMash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e992d93a-f8b3-4b97-8bf2-9c2090664fea
     m_ActionName: 'Player/Mash[/Keyboard/space]'
   - m_PersistentCalls:
