@@ -14,6 +14,14 @@ public class DialogueManager : MonoBehaviour
     [TextArea(3, 5)] // 인스펙터 창에서 줄바꿈을 편하게 할 수 있게 해줍니다.
     public string[] sentences; // 대사들을 순서대로 담을 배열
 
+    //효과음 관련 내용
+    [Header("효과음 설정")]
+    public AudioSource audioSource;
+
+    public AudioClip dialogueNextSound;
+    public AudioClip paperOpenSound;
+    //여기까지
+
     [Header("이벤트 설정")]
     // ⭐ [추가] 대사가 모두 끝났을 때 실행될 이벤트입니다. 인스펙터 창에 버튼 형태의 칸이 생깁니다.
     public UnityEvent onDialogueComplete; 
@@ -44,6 +52,20 @@ public class DialogueManager : MonoBehaviour
         // 사용자가 스페이스바를 누르면 다음 대사로 넘어갑니다.
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //효과음 재생용 코드
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (currentIndex == 3)
+                {
+                    audioSource.PlayOneShot(paperOpenSound);
+                }
+                else
+                {
+                    audioSource.PlayOneShot(dialogueNextSound);
+                } 
+            }
+            //여기까지
+
             NextDialogue();
         }
     }
@@ -75,7 +97,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         dialogueText.text = ""; // 텍스트 창을 비웁니다.
-        
+
         Debug.Log("주인공의 독백이 끝났습니다! 이제 유서를 클릭하거나 다음 씬으로 넘어갑니다."); 
         
         // 글자뿐만 아니라 검은색 대사 박스(Panel)를 통째로 화면에서 사라지게 만듭니다.
