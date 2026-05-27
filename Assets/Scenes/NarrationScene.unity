@@ -739,11 +739,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7700735302395547705, guid: 1a68de76935148c498cf509e95b05ca6, type: 3}
       propertyPath: m_fontSize
-      value: 60
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700735302395547705, guid: 1a68de76935148c498cf509e95b05ca6, type: 3}
+      propertyPath: m_margin.w
+      value: 148.1225
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700735302395547705, guid: 1a68de76935148c498cf509e95b05ca6, type: 3}
+      propertyPath: m_margin.y
+      value: -113.72226
       objectReference: {fileID: 0}
     - target: {fileID: 7700735302395547705, guid: 1a68de76935148c498cf509e95b05ca6, type: 3}
       propertyPath: m_margin.z
-      value: -1889.217
+      value: -1625.1278
       objectReference: {fileID: 0}
     - target: {fileID: 7700735302395547705, guid: 1a68de76935148c498cf509e95b05ca6, type: 3}
       propertyPath: m_fontAsset
@@ -762,8 +770,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7700735302395547705, guid: 1a68de76935148c498cf509e95b05ca6, type: 3}
+      propertyPath: m_lineSpacing
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700735302395547705, guid: 1a68de76935148c498cf509e95b05ca6, type: 3}
       propertyPath: m_fontSizeBase
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7700735302395547705, guid: 1a68de76935148c498cf509e95b05ca6, type: 3}
       propertyPath: m_sharedMaterial
