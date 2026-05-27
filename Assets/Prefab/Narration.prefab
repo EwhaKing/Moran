@@ -105,8 +105,8 @@ MonoBehaviour:
   - "\uADF8\uACF3\uC5D0 \uB0B4 \uC783\uC5B4\uBC84\uB9B0 \uAE30\uC5B5\uC758 \uC2E4\uB9C8\uB9AC\uAC00
     \uC788\uC744\uC9C0\uB3C4 \uBAB0\uB77C."
   audioSource: {fileID: 7868465539695473531}
-  dialogueNextSound: {fileID: 8300000, guid: a6a8d0012e991e745a4cf314432dd494, type: 3}
-  paperOpenSound: {fileID: 8300000, guid: e7f2eaaab2768ee45a55e8750d1bea12, type: 3}
+  dialogueNextSound: {fileID: 8300000, guid: 5badf95f72cb2b74bb92ee05862e55a8, type: 3}
+  paperOpenSound: {fileID: 8300000, guid: 51334aed422618c48b7797f8e7a7a9fd, type: 3}
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -292,7 +292,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

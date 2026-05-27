@@ -55,7 +55,7 @@ public class DialogueManager : MonoBehaviour
             //효과음 재생용 코드
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (currentIndex == 3)
+                if (currentIndex == 5)
                 {
                     audioSource.PlayOneShot(paperOpenSound);
                 }
