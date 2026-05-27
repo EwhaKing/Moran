@@ -12,6 +12,13 @@ public class SceneDoorInteractable : MonoBehaviour, IInteractable
     [Header("Prompt")]
     [SerializeField] private string promptText = "E: 이동하기";
 
+    //문소리 적용 코드
+    [Header("Door SFX")]
+    [SerializeField] private AudioSource doorAudioSource;
+    [SerializeField] private AudioClip doorSound;
+    [SerializeField] private float sceneLoadDelay = 0.7f;
+    //여기까지
+
     private bool isLoading;
 
     public string GetPromptText(PlayerState playerState)
@@ -40,6 +47,27 @@ public class SceneDoorInteractable : MonoBehaviour, IInteractable
 
         Debug.Log($"[SceneDoorInteractable] 씬 이동: {targetSceneName}, SpawnId: {targetSpawnId}");
 
+        //Door 상호작용
+        if (playerState != null && playerState.IsPossessed && doorSound != null)
+        {
+            if (doorAudioSource == null)
+                doorAudioSource = GetComponent<AudioSource>();
+
+            if (doorAudioSource == null)
+                doorAudioSource = gameObject.AddComponent<AudioSource>();
+
+            doorAudioSource.PlayOneShot(doorSound);
+            Invoke(nameof(LoadTargetScene), sceneLoadDelay);
+        }
+        else
+        {
+            LoadTargetScene();
+        }
+        //여기까지
+    }
+
+    private void LoadTargetScene()
+    {
         SceneManager.LoadScene(targetSceneName);
     }
 }

@@ -11,6 +11,12 @@ public class LoveLetterInteractable : MonoBehaviour
     public AudioClip afterLetterBGM;
     //여기까지
 
+    //상호작용 소리용 창 생성
+    [Header("SFX")]
+    public AudioSource sfxSource;
+    public AudioClip paperSound;
+    //여기까지
+
     [Header("UI 안내창 연결")]
     public GameObject ghostWarningUI;   // "유령은 물건을 만질 수 없습니다" UI
     public GameObject promptEWithText;  // "[E] 연서 열기" UI
@@ -69,10 +75,18 @@ public class LoveLetterInteractable : MonoBehaviour
         }
         else if (cachedPlayerState.IsPossessed)
         {
+            //상호작용 소리용 코드
+            PlayPaperSound();
+            //여기까지
+
             if (ghostWarningUI != null) ghostWarningUI.SetActive(false);
             if (promptEWithText != null) promptEWithText.SetActive(false);
 
-            StartNarration();
+            //나레이션 재생 연장
+            Invoke(nameof(StartNarration), 1.0f);
+            //여기까지
+
+            //StartNarration();
         }
     }
 
@@ -144,6 +158,20 @@ public class LoveLetterInteractable : MonoBehaviour
             onNarrationEnd.Invoke();
         }
     }
+
+    //상호작용 소리용 코드
+    void PlayPaperSound()
+    {
+        if (sfxSource == null)
+            sfxSource = GetComponent<AudioSource>();
+
+        if (sfxSource == null)
+            sfxSource = gameObject.AddComponent<AudioSource>();
+
+        if (paperSound != null)
+            sfxSource.PlayOneShot(paperSound);
+    }
+    //여기까지
 
     void OnTriggerEnter2D(Collider2D other)
     {
