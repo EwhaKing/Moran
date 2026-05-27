@@ -617,8 +617,8 @@ MonoBehaviour:
   gaugeSlider: {fileID: 2075289498}
   timerText: {fileID: 786224457}
   countText: {fileID: 1509859923}
-  requiredTapCount: 10
-  timeLimit: 3
+  requiredTapCount: 100
+  timeLimit: 10
 --- !u!1 &433734162
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +911,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  endingSceneName: EndingScene
 --- !u!1 &471480309
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,8 +2212,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4281990912
+  m_fontColor: {r: 0, g: 1, b: 0.2239967, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2229,8 +2230,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7084,7 +7085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27782c47127f443cb17444e4452acd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeskInteractable
-  messageUI: {fileID: 0}
+  messageUI: {fileID: 1099263600}
   ghostMessage: "\uC720\uB839\uC740 \uBB3C\uAC74\uC744 \uB9CC\uC9C8 \uC218 \uC5C6\uB2E4. "
   possessedMessage: "\uC4F0\uB2E4 \uB9CC \uC77C\uAE30\uAC00 \uBCF4\uC778\uB2E4.\n[\uADF8
     \uC0AC\uB78C\uC774 \uBCF4\uACE0 \uC2F6\uC744 \uB54C\uB9C8\uB2E4 \uADF8 \uBC29\uC5D0
