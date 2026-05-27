@@ -618,7 +618,7 @@ MonoBehaviour:
   timerText: {fileID: 786224457}
   countText: {fileID: 1509859923}
   requiredTapCount: 100
-  timeLimit: 10
+  timeLimit: 14
 --- !u!1 &433734162
 GameObject:
   m_ObjectHideFlags: 0
