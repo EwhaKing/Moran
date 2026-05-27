@@ -5,6 +5,10 @@ public class DeskInteractable : MonoBehaviour, IInteractable
     [Header("UI")]
     [SerializeField] private SimpleMessageUI messageUI;
 
+    [Header("SFX")]
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioClip investigateSound;
+
     [Header("Messages")]
     [TextArea(2, 4)]
     [SerializeField] private string ghostMessage = "유령은 물건을 만질 수 없다. ";
@@ -39,12 +43,30 @@ public class DeskInteractable : MonoBehaviour, IInteractable
 
         if (playerState.IsPossessed)
         {
+            //효과음 재생용 코드
+            PlayInvestigateSound();
+            //여기까지
+
             if (messageUI != null)
                 messageUI.Show(possessedMessage);
 
             Debug.Log("[DeskInteractable] 빙의 상태로 책상 조사");
         }
     }
+
+    //상호작용 소리용 코드
+    private void PlayInvestigateSound()
+    {
+        if (sfxSource == null)
+            sfxSource = GetComponent<AudioSource>();
+
+        if (sfxSource == null)
+            sfxSource = gameObject.AddComponent<AudioSource>();
+
+        if (investigateSound != null)
+            sfxSource.PlayOneShot(investigateSound);
+    }
+    //여기까지
 
     private void OnTriggerExit2D(Collider2D other)
     {

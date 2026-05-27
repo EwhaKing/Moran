@@ -2,6 +2,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 
+//추가
+using UnityEngine.SceneManagement;
+//여기까지
+
 public class LoveLetterInteractable : MonoBehaviour
 {
     //BGM용 창 생성
@@ -9,6 +13,19 @@ public class LoveLetterInteractable : MonoBehaviour
     public AudioSource bgmSource;      
     public AudioClip letterBGM;
     public AudioClip afterLetterBGM;
+    //여기까지
+
+    //상호작용 소리용 창 생성
+    [Header("SFX")]
+    public AudioSource sfxSource;
+    public AudioClip paperSound;
+    //여기까지
+
+    //효과음 창 생성
+    [Header("Space SFX")]
+    public AudioClip letterPageSound;
+    public AudioClip narrationNextSound;
+    public int letterSoundCount = 5;
     //여기까지
 
     [Header("UI 안내창 연결")]
@@ -69,10 +86,18 @@ public class LoveLetterInteractable : MonoBehaviour
         }
         else if (cachedPlayerState.IsPossessed)
         {
+            //상호작용 소리용 코드
+            PlayPaperSound();
+            //여기까지
+
             if (ghostWarningUI != null) ghostWarningUI.SetActive(false);
             if (promptEWithText != null) promptEWithText.SetActive(false);
 
-            StartNarration();
+            //나레이션 재생 연장
+            Invoke(nameof(StartNarration), 1.0f);
+            //여기까지
+
+            //StartNarration();
         }
     }
 
@@ -104,6 +129,10 @@ public class LoveLetterInteractable : MonoBehaviour
 
     void NextSentence()
     {
+        //효과음 생성용 코드
+        PlaySpaceNextSound();
+        //여기까지
+
         currentIndex++;
 
         if (currentIndex >= sentences.Length)
@@ -115,6 +144,34 @@ public class LoveLetterInteractable : MonoBehaviour
             ShowSentence();
         }
     }
+
+    //효과음 생성용 코드
+    void PlaySpaceNextSound()
+    {
+        if (sfxSource == null)
+            sfxSource = GetComponent<AudioSource>();
+
+        if (sfxSource == null)
+            sfxSource = gameObject.AddComponent<AudioSource>();
+
+        AudioClip targetClip = null;
+
+        if (currentIndex == 4)
+        {
+            targetClip = letterPageSound;
+        }
+
+        else if (currentIndex >= 5)
+        {
+            targetClip = narrationNextSound;
+        }
+
+        if (targetClip != null)
+        {
+            sfxSource.PlayOneShot(targetClip);
+        }
+    }
+    //여기까지
 
     void EndNarration()
     {
@@ -144,6 +201,20 @@ public class LoveLetterInteractable : MonoBehaviour
             onNarrationEnd.Invoke();
         }
     }
+
+    //상호작용 소리용 코드
+    void PlayPaperSound()
+    {
+        if (sfxSource == null)
+            sfxSource = GetComponent<AudioSource>();
+
+        if (sfxSource == null)
+            sfxSource = gameObject.AddComponent<AudioSource>();
+
+        if (paperSound != null)
+            sfxSource.PlayOneShot(paperSound);
+    }
+    //여기까지
 
     void OnTriggerEnter2D(Collider2D other)
     {

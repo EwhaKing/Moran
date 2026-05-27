@@ -2850,7 +2850,7 @@ GameObject:
   - component: {fileID: 734570687}
   - component: {fileID: 734570686}
   m_Layer: 0
-  m_Name: OutsideSceneManager
+  m_Name: OutsideSceneBGMManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2867,7 +2867,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 900f494546fe2e441b441520bc73f5e0, type: 3}
+  m_Resource: {fileID: 8300000, guid: 299934bde172c654b9db6a195ac94109, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -6899,6 +6899,7 @@ GameObject:
   - component: {fileID: 1636189550}
   - component: {fileID: 1636189549}
   - component: {fileID: 1636189548}
+  - component: {fileID: 1636189551}
   m_Layer: 0
   m_Name: ToInsideTrigger2
   m_TagString: Untagged
@@ -6921,6 +6922,9 @@ MonoBehaviour:
   targetSceneName: InsideScene
   targetSpawnId: InsideStartRight
   promptText: "E: \uC774\uB3D9\uD558\uAE30"
+  doorAudioSource: {fileID: 1636189551}
+  doorSound: {fileID: 8300000, guid: 07af70e203f660d4eb8320056037a586, type: 3}
+  sceneLoadDelay: 0.7
 --- !u!61 &1636189549
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6982,6 +6986,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1636189551
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636189547}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.9
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1647214451
 GameObject:
   m_ObjectHideFlags: 0
@@ -7470,6 +7571,7 @@ GameObject:
   - component: {fileID: 1735666952}
   - component: {fileID: 1735666951}
   - component: {fileID: 1735666953}
+  - component: {fileID: 1735666954}
   m_Layer: 0
   m_Name: ToInsideTrigger
   m_TagString: Untagged
@@ -7553,7 +7655,107 @@ MonoBehaviour:
   targetSceneName: InsideScene
   targetSpawnId: InsideStart
   promptText: "E: \uC774\uB3D9\uD558\uAE30"
---- !u!1 &1739575851
+  doorAudioSource: {fileID: 1735666954}
+  doorSound: {fileID: 8300000, guid: 07af70e203f660d4eb8320056037a586, type: 3}
+  sceneLoadDelay: 0.7
+--- !u!82 &1735666954
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735666950}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.9
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &1762726382
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21912,6 +22114,18 @@ PrefabInstance:
       propertyPath: promptUI
       value: 
       objectReference: {fileID: 739849363}
+    - target: {fileID: 5926975817619456664, guid: 2ea89a315315545a18147b134b93ab63, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6679547169452239244, guid: 2ea89a315315545a18147b134b93ab63, type: 3}
+      propertyPath: insideFootstep
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cb9764857b97ad4e99447b3efe7fccb, type: 3}
+    - target: {fileID: 6679547169452239244, guid: 2ea89a315315545a18147b134b93ab63, type: 3}
+      propertyPath: outsideFootstep
+      value: 
+      objectReference: {fileID: 8300000, guid: 96939659c1d3f7a429e28d8393011075, type: 3}
     - target: {fileID: 6837944079310492210, guid: 2ea89a315315545a18147b134b93ab63, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
